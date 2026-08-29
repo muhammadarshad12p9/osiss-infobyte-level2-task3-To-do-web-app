@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family: "Poppins", sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #1e3a8a
+    );
+
+    padding: 40px 20px;
+
+    color: #1e293b;
+}
+
+
+.app {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+
+.header {
+    text-align: center;
+
+    color: white;
+
+    margin-bottom: 35px;
+}
+
+.header h1 {
+    font-size: 42px;
+
+    margin-bottom: 8px;
+}
+
+.header p {
+    color: #cbd5e1;
+
+    font-size: 17px;
+}
+
+
+
+
+.add-task {
+    display: flex;
+
+    gap: 12px;
+
+    background: white;
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    margin-bottom: 30px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+.add-task input {
+    flex: 1;
+
+    border: 1px solid #cbd5e1;
+
+    outline: none;
+
+    padding: 14px 16px;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    font-family: inherit;
+}
+
+
+.add-task input:focus {
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+
+.add-task button {
+    border: none;
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 14px 22px;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.add-task button:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+
+
+.task-container {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+
+.task-column {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    min-height: 400px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.completed-column {
+    background: #f0fdf4;
+}
+
+
+
+
+.task-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+
+.task-header h2 {
+    font-size: 21px;
+}
+
+
+.task-header span {
+    background: #e0e7ff;
+
+    color: #3730a3;
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.task-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+
+.task {
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    transition: 0.3s;
+}
+
+
+.task:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+.task.completed {
+    background: #dcfce7;
+
+    border-color: #86efac;
+}
+
+
+.task-text {
+    font-size: 16px;
+
+    font-weight: 500;
+
+    word-break: break-word;
+}
+
+
+.completed .task-text {
+    text-decoration: line-through;
+
+    color: #64748b;
+}
+
+
+
+.timestamp {
+    font-size: 12px;
+
+    color: #64748b;
+}
+
+
+
+
+.task-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+.task-actions button {
+    border: none;
+
+    padding: 8px 12px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+
+.complete-btn {
+    background: #16a34a;
+
+    color: white;
+}
+
+
+.edit-btn {
+    background: #f59e0b;
+
+    color: white;
+}
+
+
+.delete-btn {
+    background: #ef4444;
+
+    color: white;
+}
+
+
+.task-actions button:hover {
+    opacity: 0.85;
+
+    transform: translateY(-2px);
+}
+
+
+
+
+.empty-message {
+    text-align: center;
+
+    color: #94a3b8;
+
+    padding: 40px 15px;
+
+    font-size: 14px;
+}
+
+
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 25px 15px;
+    }
+
+    .header h1 {
+        font-size: 32px;
+    }
+
+    .task-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .add-task {
+        flex-direction: column;
+    }
+
+    .add-task button {
+        width: 100%;
+    }
+
+    .task-column {
+        padding: 18px;
+    }
+
+}
